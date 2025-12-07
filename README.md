@@ -1,6 +1,3 @@
-# CoE-Metric-for-Multi-LLM-System
-
-
 # CoE: Collaborative-Entropy-based Multi-LLM Inference Framework for Edge AI Systems
 
 This repository contains the code necessary to reproduce the experiments of the Nature submission 'CoE: Collaborative-Entropy-based Multi-LLM Inference Framework for Edge AI Systems'.
