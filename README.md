@@ -110,39 +110,53 @@ export OPENROUTER_API_KEY=your_api_key_here
 
 Run:
 
-```
-python semantic_uncertainty/generate_answers.py --model_name=Llama-2-7b-chat --dataset=trivia_qa
+
+``` 
+# 使用openrouter_前缀格式也支持
+python semantic_uncertainty/generate_answers.py --model_name=openrouter_llama-3.1-8b-instruct --dataset=trivia_qa
 ```
 
 ```
-python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct  --dataset=trivia_qa
+# 使用简化名称（通过内部映射表自动转换）
+python semantic_uncertainty/generate_answers.py --model_name=llama-3.1-8b-instruct --dataset=trivia_qa
 ```
 
 ## Multi-Model Mode:
 
 Run:
 
-```
-# 使用模型名称格式（推荐）
-python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct --dataset=trivia_qa
-
-nohup python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct,qwen/qwen-2.5-7b-instruct --dataset=trivia_qa --num_samples=40 --wandb_mode online --analyze_run &
-
- python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct,qwen/qwen-2.5-7b-instruct --dataset=trivia_qa --num_samples=40 --wandb_mode online --compute_uncertainties --test_coe_reduction 
-
-model: meta-llama/llama-3.1-8b-instruct, qwen/qwen-2.5-7b-instruct, mistralai/mistral-7b-instruct, etc
-large model: meta-llama/llama-3.3-70b-instruct, meta-llama/llama-3.1-405b-instruct
-# 使用简化名称（通过内部映射表自动转换）
-python semantic_uncertainty/generate_answers.py --model_name=llama-3.1-8b-instruct --dataset=trivia_qa
-
+``` 
 # 使用openrouter_前缀格式也支持
-python semantic_uncertainty/generate_answers.py --model_name=openrouter_llama-3.1-8b-instruct --dataset=trivia_qa
+python semantic_uncertainty/generate_answers.py --model_name=openrouter_meta-llama/llama-3.1-8b-instruct,openrouter_qwen/qwen-2.5-7b-instruct --dataset=trivia_qa
 ```
 
-to reproduce results for short-phrase generation with LLaMa-2 Chat (7B) on the BioASQ dataset.
+```
+python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct,qwen/qwen-2.5-7b-instruct --dataset=trivia_qa --num_samples=40 --wandb_mode online --analyze_run
 
-The expected runtime of this demo is 1 hour using an Nvidia A100 GPU (80 GB), 24 cores of a Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz, and 192 GB of RAM.
-Runtime may be longer upon first execution, as the LLM needs to be downloaded from Hugging Face first.
+```
+
+
+
+Compute Uncertainty:
+```
+
+ python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct,qwen/qwen-2.5-7b-instruct --dataset=trivia_qa --num_samples=40 --wandb_mode online --compute_uncertainties
+```
+
+
+Use CoE-Reduction Algorithm:
+```
+
+ python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct,qwen/qwen-2.5-7b-instruct --dataset=trivia_qa --num_samples=40 --wandb_mode online --compute_uncertainties --test_coe_reduction
+```
+
+
+
+model: meta-llama/llama-3.1-8b-instruct, qwen/qwen-2.5-7b-instruct, mistralai/mistral-7b-instruct, etc. 
+large model: meta-llama/llama-3.3-70b-instruct, meta-llama/llama-3.1-405b-instruct
+
+Please refer to the web:https://openrouter.ai/
+
 
 To evaluate the run and obtain a barplot similar to those of the paper, open the Jupyter notebook in [notebooks/example_evaluation.ipynb](notebooks/example_evaluation.ipynb), populate the `wandb_id` variable in the first cell with the id assigned to your demo run, and execute all cells of the notebook.
 
