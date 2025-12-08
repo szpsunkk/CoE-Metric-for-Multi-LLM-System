@@ -123,7 +123,7 @@ python semantic_uncertainty/generate_answers.py --model_name=openrouter_llama-3.
 python semantic_uncertainty/generate_answers.py --model_name=llama-3.1-8b-instruct --dataset=trivia_qa
 ```
 
-## Multi-Model Mode:
+## Multi-Model Collaborative Mode:
 
 Run:
 
