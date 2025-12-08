@@ -155,7 +155,7 @@ Use CoE-Reduction Algorithm:
 model: meta-llama/llama-3.1-8b-instruct, qwen/qwen-2.5-7b-instruct, mistralai/mistral-7b-instruct, etc. 
 large model: meta-llama/llama-3.3-70b-instruct, meta-llama/llama-3.1-405b-instruct
 
-Please refer to the web:https://openrouter.ai/
+For the different LLM APIs, please refer to the web:https://openrouter.ai/
 
 
 To evaluate the run and obtain a barplot similar to those of the paper, open the Jupyter notebook in [notebooks/example_evaluation.ipynb](notebooks/example_evaluation.ipynb), populate the `wandb_id` variable in the first cell with the id assigned to your demo run, and execute all cells of the notebook.
