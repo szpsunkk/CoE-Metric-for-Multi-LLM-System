@@ -1,5 +1,29 @@
 # CoE: Collaborative-Entropy-based Multi-LLM Inference Framework for Edge AI Systems
 
+The repository is to balance the LLM uncertainty metrics, including single-model uncertainty and multi-model uncertainty.
+
+For single-model uncertainty, it is mainly based on semantic entropy, including:
+
+* $P_{false}$
+* $p_{ik}$
+* Regular entropy
+* Semantic entropy
+
+For multi-model uncertainty, it is mainly based on collaborative entropy, including:
+
+the mean value of:
+
+* $P_{false}$
+* $p_{ik}$
+* Regular entropy
+* Semantic entropy
+
+and the value:
+
+* Aleatoric Entropy Uncertainty $\mathcal{U}_{\mathcal{A}}$
+* Epistemic Entropy Uncertainty $\mathcal{U}_{\mathcal{E}}$
+* Collaboraive Entropy Uncertainty $\mathcal{U}_{CoE}$
+
 This repository contains the code necessary to reproduce the experiments of the Nature submission 'CoE: Collaborative-Entropy-based Multi-LLM Inference Framework for Edge AI Systems'.
 
 This repository builds on the original, now deprecated codebase for semantic uncertainty at [https://github.com/lorenzkuhn/semantic_uncertainty](https://github.com/lorenzkuhn/semantic_uncertainty).
@@ -91,7 +115,9 @@ python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.
 ```bash
 # 设置API密钥
 export OPENROUTER_API_KEY=your_api_key_here
-
+```
+For 
+```
 # 使用模型名称格式（推荐）
 python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct --dataset=trivia_qa
 
