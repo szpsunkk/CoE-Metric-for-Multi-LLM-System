@@ -6,8 +6,8 @@ For single-model uncertainty, it is mainly based on semantic entropy, including:
 
 * $P_{false}$
 * $p_{ik}$
-* Regular entropy
-* Semantic entropy
+* Regular Entropy
+* Semantic Entropy
 
 For multi-model uncertainty, it is mainly based on collaborative entropy, including:
 
@@ -15,14 +15,14 @@ the mean value of:
 
 * $P_{false}$
 * $p_{ik}$
-* Regular entropy
-* Semantic entropy
+* Regular Entropy
+* Semantic Entropy
 
 and the value:
 
-* Aleatoric Entropy Uncertainty $\mathcal{U}_{\mathcal{A}}$
-* Epistemic Entropy Uncertainty $\mathcal{U}_{\mathcal{E}}$
-* Collaboraive Entropy Uncertainty $\mathcal{U}_{CoE}$
+* Aleatoric Entropy $\mathcal{U}_{\mathcal{A}}$
+* Epistemic Entropy $\mathcal{U}_{\mathcal{E}}$
+* Collaboraive Entropy $\mathcal{U}_{CoE}$
 
 This repository contains the code necessary to reproduce the experiments of the Nature submission 'CoE: Collaborative-Entropy-based Multi-LLM Inference Framework for Edge AI Systems'.
 
