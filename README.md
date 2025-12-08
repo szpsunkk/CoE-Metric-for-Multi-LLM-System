@@ -97,10 +97,18 @@ For almost all tasks, the dataset is downloaded automatically from the Hugging F
 The only exception is BioASQ (task b, BioASQ11, 2023), for which the data needs to be [downloaded](http://participants-area.bioasq.org/datasets) manually and stored at `$SCRATCH_DIR/$USER/semantic_uncertainty/data/bioasq/training11b.json`, where `$SCRATCH_DIR` defaults to `.`.
 
 
+### 使用OpenRouter API调用在线模型
 
-## Demo
+```bash
+# 设置API密钥
+export OPENROUTER_API_KEY=your_api_key_here
+```
 
-Execute
+
+
+## Single-Model Mode:
+
+Run:
 
 ```
 python semantic_uncertainty/generate_answers.py --model_name=Llama-2-7b-chat --dataset=trivia_qa
@@ -110,13 +118,10 @@ python semantic_uncertainty/generate_answers.py --model_name=Llama-2-7b-chat --d
 python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct  --dataset=trivia_qa
 ```
 
-# 使用OpenRouter API调用在线模型
+## Multi-Model Mode:
 
-```bash
-# 设置API密钥
-export OPENROUTER_API_KEY=your_api_key_here
-```
-For 
+Run:
+
 ```
 # 使用模型名称格式（推荐）
 python semantic_uncertainty/generate_answers.py --model_name=meta-llama/llama-3.1-8b-instruct --dataset=trivia_qa
