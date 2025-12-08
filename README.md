@@ -1,5 +1,7 @@
 # CoE: Collaborative-Entropy-based Multi-LLM Inference Framework for Edge AI Systems
 
+We will make the code publicly available once the paper is accepted.
+
 The repository is to balance the LLM uncertainty metrics, including single-model uncertainty and multi-model uncertainty.
 
 For single-model uncertainty, it is mainly based on semantic entropy, including:
